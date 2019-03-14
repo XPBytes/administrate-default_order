@@ -4,7 +4,7 @@
 [![Gem Version](https://badge.fury.io/rb/administrate-default_order.svg)](https://badge.fury.io/rb/administrate-default_order)
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 
-Authorize a certain block with cancan(can), or any other authorization framework that exposes a method `can?`.
+Add default ordering to Administrate controllers.
 
 ## Installation
 
