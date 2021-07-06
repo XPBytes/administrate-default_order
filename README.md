@@ -38,6 +38,20 @@ class BookController < ApplicationController
 end
 ```
 
+⚠ If you're on a recent `administrate` version, you'll (temporarily) need to add the following to your base controller / application controller:
+
+```ruby
+def sorting_params
+  from_query = super
+  return from_query if from_query.present?
+
+  params.fetch(resource_name) { ActionController::Parameters.new({}) }
+        .permit(:direction, :order)
+end
+```
+
+That's because `sorting_params` used to work directly on `params` and now it works on `request.query_parameters` only, so it can't conflict with locally passing `params` with the exact same name. This re-introduces that constraint, but also makes `DefaultOrder` work again. A future update to this library will resolve this limitation.
+
 ## Related
 
 - [`Administrate`](https://github.com/thoughtbot/administrate): A Rails engine that helps you put together a super-flexible admin dashboard.
