@@ -82,7 +82,7 @@ GEM
     nokogiri (1.13.10-x64-mingw32)
       racc (~> 1.4)
     racc (1.6.1)
-    rack (2.2.3)
+    rack (2.2.6.3)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails-dom-testing (2.0.3)
